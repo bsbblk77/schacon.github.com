@@ -1,24 +1,53 @@
 body {
-  font-family: Arial, sans-serif;
-  background: #A4CFBE;
-  color: #6C6E58;
+/*   font-family: Georgia,DejaVu Sans,Verdana,sans-serif; */
+  font-family: "Droid Serif",Georgia,FreeSerif,"DejaVu Serif",serif;
+  background: #C7D2D9;
+  color: #333;
 }
 
-.more { font-size: 0.7em;}
+.more {
+  font-size: 0.6em;
+}
 
-img.right { 
+.small {
+  font-size: 0.8em;
+}
+
+
+img.right {
   float: right;
-  margin: 15px;
+/*   margin: 15px 0px 15px 15px; */
+  margin: 0px 0px 0px 15px;
 }
 
-a {
-  color: #3E423A;
+img.left {
+  float: left;
+/*   margin: 15px 15px 15px 0px; */
+  margin: 0px 15px 0px 0px;
+}
+
+dt {
   font-weight: bold;
 }
 
+a {
+  /*font-weight: bold;*/
+  /*color: #3E423A;*/
+  color: #035E99;
+  text-decoration: underline;
+}
+
+/*.post a {
+  color: #3E423A;
+  border-bottom: 1px solid #333;
+}
+
+.post a:hover {
+  background-color: #CADCE8;
+}*/
 a:visited {
-  color: #6C6E58;
   font-weight: normal;
+  color: #333;
 }
 
 #wrapper {
@@ -34,40 +63,41 @@ a:visited {
 #header {
   text-transform: lowercase;
   text-align: left;
-  background: #417378;
+  background: #0482D4;
   -moz-border-radius-topleft: 1em;
   -webkit-border-top-left-radius: 1em;
   -moz-border-radius-topright: 1em;
-  -webkit-border-top-right-radius: 1em;  
-  border-top-left-radius: 1em;  
-  border-top-right-radius: 1em;  
+  -webkit-border-top-right-radius: 1em;
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
   padding: 1.5em;
   text-align: center;
+  font-size: 0.95em; /* hack for serif font on hu pool */
+}
+
+#header * {
+  display: inline;
+  font-weight: normal;
+  color: #fff;
 }
 
 #header h1 {
-  font-size: 4em;
-  display: inline;
-  letter-spacing: -0.08em;
-  color: #fff;
-  font-weight: normal;
+  font-size: 3.8em;
 }
 
 #header h2 {
-  display: inline;
   margin-left: 0.5em;
   font-size: 2em;
-  font-weight: normal;
-  color: #F4F7D9;
 }
 
 #menu {
-  background: #3E423A;
+  background: #035E99;
 }
 
 #menu ul {
   list-style: none;
   margin: 0;
+  padding: 0;
   text-align: center;
 }
 
@@ -76,11 +106,20 @@ a:visited {
 }
 
 #menu ul li a {
-  color: white;
+  background-color: #035E99;
+  color: #fff;
   font-size: 1.3em;
-  padding: 0 0.5em;
-  line-height: 2.5em;  
+  padding: 0 0.1em 0 0.1em;
+  margin: 0 0.5em;
+  line-height: 2.5em;
   font-weight: normal;
+  text-decoration: none;
+  border-bottom: 1px solid #fff;
+}
+
+#menu ul li a:hover {
+  background-color: #144566;
+  /*color: #035E99;*/
 }
 
 #content {
@@ -89,13 +128,11 @@ a:visited {
 
 #content h2 {
   margin: 0 0 0.5em 0;
-  color: black;
   font-size: 1.5em;
 }
 
 #content p {
   line-height: 140%;
-  letter-spacing: -0.03em;
 }
 
 span.date {
@@ -109,29 +146,97 @@ span.date {
 }
 
 div.post {
-  margin-bottom: 2em;
+  /*margin-bottom: 2em;*/
 }
-
+.meta-line {
+  background-color: #eee;
+  margin-bottom: 1em;
+  padding: 0.2em;
+  color: #555;
+}
+.meta-line div.cats {
+  float: right;
+  font-weight: 400;
+}
+.meta-line div.tags {
+  float: left;
+}
 .post h1 {
   margin-top: 0.2em;
+  padding: 0;
+  margin:0;
 }
 
-.post { color: #333; }
+.post {
+}
 
 .post h1 a {
   text-decoration: none;
   clear: left;
   display: block;
-  color: black;
-  padding: 0.3em 0;
-  margin: 0 0 0.2em 0;
+  color: #333;
+  padding-top: 0.3em;
+  margin: 0;
   border-bottom: 1px dashed #dba;
   font-weight: bold;
 }
 
-.post br { margin-bottom: 10px;}
+.post br {
+  margin-bottom: 10px;
+}
 
-pre {
+.post blockquote {
+  margin-left: 0;
+  padding-left: 1em;
+  border-left: 5px solid #C7D2D9;
+}
+
+.maruku_toc:before {
+  content: "Content";
+  font-weight: bold;
+  font-size: 1.5em;
+  display:block;
+}
+div.maruku_toc, div.message {
+  padding: 0.7em;
+  -moz-border-radius: 0.5em;
+  -webkit-border-radius: 0.5em;
+  border-radius: 0.5em;
+  margin-bottom: 1em;
+}
+div.maruku_toc, div.blue_background {
+  background-color: #CADCE8;
+  border: 2px solid #6BABD6;
+}
+.maruku_toc ul {
+  /*margin-top: 0;*/
+}
+.maruku_toc ul li {
+  margin-top: 0.1em;
+}
+
+pre, code {
+  font-family:"Droid Sans Mono",Consolas,"Andale Mono","Courier New",Courier,mono !important;
+  font-weight: 400;
+  font-size:0.9em;
+}
+
+*:not(PRE) > code {
+  background-color: #333;
+  color: #fff;
+}
+
+pre:not([class]) {
+  background-color: #333;
+  border: 1px solid #000;
+  color: #fff;
+  margin: 1em 0;
+  overflow: auto;
+  padding: 0.5em;
+}
+
+
+div.highlight pre:not([class]) {
   background: #f8f8f8;
   border: 1px solid #E7E5DC;
   border-width: 1px 0 4px 6px;
@@ -139,8 +244,6 @@ pre {
   overflow: auto;
   color: black;
   line-height: 120%;
-  font-family: "Consolas","Courier New",Courier,mono;
-  font-size: 12px;
   letter-spacing: 0;
 }
 
@@ -160,7 +263,7 @@ table.post-list th {
 
 table.post-list td, table.post-list th {
   padding: 0.5em 0.3em;
-  border-bottom: 1px solid #dba;
+  border-bottom: 1px solid #333;
 }
 
 table.post-list tr:last-child td, table.post-list tr:last-child th {
@@ -173,7 +276,6 @@ div.related {
 
 #footer {
   margin-bottom: 2em;
-  color: #3E423A;
   font-size: 0.9em;
   padding: 0.5em;
   text-align: center;
@@ -183,16 +285,16 @@ div.related {
   float: left;
 }
 
-#content .home_box h2 {
-  background: #417378;
+h2.block {
+  background: #0482D4;
   padding: 0.3em 0.5em;
-  border-bottom: 3px solid #255;
+  border-bottom: 3px solid #035E99;
   margin-bottom: 0em;
-  color: white;
+  color: #000;
 }
 
 .home_box h2 a {
-  color: white;
+  color: #fff;
   margin: 0 0.2em;
 }
 
@@ -208,7 +310,7 @@ div.related {
 .clearfix { clear: both;}
 
 #footer a {
-  color: #3E423A;
+  color: #035E99;
   font-weight: normal;
 }
 
@@ -216,16 +318,13 @@ div.related {
   font-size: 0.7em;
 }
 
-.repo {
+div.yellow_background {
   background: #fff5cc;
   border: 2px solid #dda;
-  padding: 0.7em 1em;
+}
+.repo {
   font-size: 0.8em;
-  letter-spacing: -0.03em;
   margin: 1em 1em 0 0;
-  -moz-border-radius: 0.5em;
-  -webkit-border-radius: 0.5em;
-  border-radius: 0.5em;
 }
 .repo h3 {
   margin: 0 0 0.3em 0;
@@ -235,6 +334,17 @@ div.related {
   color: black;
   letter-spacing: 0;
   font-size: 1.1em;
+}
+
+ul#latest_posts_widget {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+ul#latest_posts_widget li span {
+  font-family: "Droid Sans Mono",Consolas,"Andale Mono","Courier New",Courier,mono !important;
+  font-size: 0.8em;
+  color: #555;
 }
 
 #github-projects.big .repo {
@@ -250,3 +360,64 @@ div.related {
 .float-right { float: right; }
 
 a img { border: 0; }
+
+
+/*
+Flickr
+======
+Images are wrapped in divs classed "flickr_badge_image" with ids "flickr_badge_imageX" where "X" is an integer specifying ordinal position. Below are some styles to get you started!
+*/
+#flickr_badge_uber_wrapper {
+  text-align:center;
+}
+#flickr_badge_wrapper {
+  padding:10px 0 10px 0;
+}
+.flickr_badge_image {
+  margin:0 2px 2px;
+  display: inline-block;
+}
+.flickr_badge_image img {
+  border: 1px solid black !important;
+}
+#flickr_badge_source {
+  text-align:left;
+  margin:0 10px 0 10px;
+}
+#flickr_badge_icon {
+  float:left;
+  margin-right:5px;
+}
+#flickr_www {
+  display:block;
+  padding:0 10px 0 10px !important;
+  font: 11px Arial, Helvetica, Sans serif !important;
+  color:#3993ff !important;
+}
+#flickr_badge_uber_wrapper a:hover,
+#flickr_badge_uber_wrapper a:link,
+#flickr_badge_uber_wrapper a:active,
+#flickr_badge_uber_wrapper a:visited {
+  text-decoration:none !important;
+  background:inherit !important;
+  color:#3993ff;
+}
+#flickr_badge_wrapper {}
+#flickr_badge_source {
+  padding:0 !important;
+  font: 11px Arial, Helvetica, Sans serif !important;
+  color:#666666 !important;
+}
+
+.gsc-control {
+  width: 100% !important;
+}
+
+
+.webcomic {
+  width: 100%;
+  max-width: 710px;
+}
+p.verse {
+  margin-bottom: 2em;
+}
